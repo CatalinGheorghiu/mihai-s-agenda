@@ -2,6 +2,7 @@ module.exports = {
 	'trailingComma': 'all',
 	'tabWidth': 4,
 	'semi': true,
-	'printWidth': 120,
-	'bracketSpacing': true
+	'printWidth': 80,
+	'bracketSpacing': true,
+	'plugins': ['prettier-plugin-tailwindcss'],
 };
