@@ -12,16 +12,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Agenda />} />
                     <Route path="/person" element={<PersonCreate />} />
-                    <Route
-                        path="/person/:id"
-                        element={<PersonDetails />}
-                        errorElement={<Error />}
-                    />
-                    <Route
-                        path="/person/edit/:id"
-                        element={<PersonEdit />}
-                        errorElement={<Error />}
-                    />
+                    <Route path="/person/:id" element={<PersonDetails />} />
+                    <Route path="/person/edit/:id" element={<PersonEdit />} />
+                    <Route path="*" element={<Error />} />
                 </Routes>
             </section>
         </main>
