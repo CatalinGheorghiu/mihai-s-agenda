@@ -31,10 +31,16 @@ export const contactSlice = createSlice({
                 contact.contactFile = action.payload.contactFile;
             }
         },
+        deleteContact: (state, action: PayloadAction<ContactState>) => {
+            return state.filter(
+                ({ contactId }) => contactId !== action.payload.contactId,
+            );
+        },
     },
 });
 
-export const { createContact, updateContact } = contactSlice.actions;
+export const { createContact, updateContact, deleteContact } =
+    contactSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectContact = (state: RootState) => state.contact.name;
