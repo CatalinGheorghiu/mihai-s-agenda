@@ -13,4 +13,8 @@
   input[type=file]::file-selector-button {
     @apply border-none mr-4 bg-transparent px-2 py-1 text-sm text-indigo-400;
   }
+
+  .delete-modal::backdrop {
+    @apply bg-black bg-opacity-60;
+  }
 }
