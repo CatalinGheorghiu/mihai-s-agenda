@@ -5,10 +5,10 @@ function Error() {
         <div className="flex h-full flex-col items-center justify-center px-4">
             <div className="h-fit w-full">
                 <h1 className="my-2 text-3xl font-black text-gray-800">
-                    Looks like you've found the doorway to the great nothing
+                    Looks like you have found the doorway to the great nothing
                 </h1>
                 <p className="my-2 text-gray-800">
-                    Sorry about that! Please visit our hompage to get where you
+                    Sorry about that! Please visit our homepage to get where you
                     need to go.
                 </p>
                 <Link

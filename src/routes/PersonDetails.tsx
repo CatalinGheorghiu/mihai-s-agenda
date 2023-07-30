@@ -2,10 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import ArrowBack from "../assets/icons/ArrowBack";
 import { useAppSelector } from "../app/hooks";
 import Error from "./Error";
-import Envelope from "../assets/icons/Envelope.tsx";
-import Call from "../assets/icons/Call.tsx";
-import Webcam from "../assets/icons/Webcam.tsx";
-import Share from "../assets/icons/Share.tsx";
+import Envelope from "../assets/icons/Envelope";
+import Call from "../assets/icons/Call";
+import Webcam from "../assets/icons/Webcam";
+import Share from "../assets/icons/Share";
 
 function PersonDetails() {
     const { id } = useParams();
@@ -25,6 +25,7 @@ function PersonDetails() {
         contactFile,
         contactId,
     } = currentContact;
+
     return (
         <div className="flex h-full flex-col rounded-3xl bg-gradient-to-tr from-purple-400 via-blue-300 to-indigo-500 md:max-h-[50vh]">
             <div className="flex min-h-[50%] flex-col items-start rounded-t-3xl px-6 py-8 text-white md:pt-12">
