@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SyntheticEvent, useState } from "react";
 import Plus from "../assets/icons/Plus";
 import Search from "../assets/icons/Search";
 import { useAppSelector } from "../app/hooks";
@@ -6,6 +7,23 @@ import VerticalDots from "../assets/icons/VerticalDots";
 
 function Agenda() {
     const contacts = useAppSelector((state) => state.contact);
+    const [filteredContacts, setFilteredContacts] = useState(contacts);
+
+    function handleSearch(event: SyntheticEvent) {
+        event.preventDefault();
+        const e = event.target as HTMLInputElement;
+        const value = e.value.toLowerCase();
+
+        if (value === "") {
+            setFilteredContacts(contacts);
+        } else {
+            const filtered = contacts.filter(({ contactName }) =>
+                contactName.toLowerCase().includes(value),
+            );
+
+            setFilteredContacts(filtered);
+        }
+    }
 
     return (
         <div className="h-full rounded-3xl bg-white px-4 py-8 md:max-h-[50vh] md:px-6 md:pt-12">
@@ -29,6 +47,7 @@ function Agenda() {
                 >
                     <Search className="absolute left-3 top-0" />
                     <input
+                        onInput={handleSearch}
                         className="w-full rounded-2xl border border-gray-200 bg-gray-50 py-2 pl-10 pr-4 text-sm text-black placeholder:text-sm placeholder:text-gray-300"
                         type="text"
                         id="search"
@@ -38,8 +57,8 @@ function Agenda() {
             </div>
 
             <ul className="flex flex-col pb-12">
-                {contacts.length > 0 &&
-                    contacts.map(
+                {filteredContacts.length > 0 &&
+                    filteredContacts.map(
                         ({
                             contactId,
                             contactName,
